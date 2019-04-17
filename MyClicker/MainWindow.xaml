@@ -1,0 +1,61 @@
+﻿<Window x:Class="MyClicker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyClicker"
+        mc:Ignorable="d"
+        Title="Auto Clicker" Height="200" Width="350"
+        ResizeMode="NoResize" Icon="./Resources/mouse_icon.ico" BorderBrush="Black">
+    <Grid Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+        
+        <TextBlock Name="MouseCoordinates" Text="Current Mouse Position: 0,0" Grid.Column="1" Grid.Row="1" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" />
+        
+        <Grid Grid.Column="1" Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
+            
+            <TextBlock Text="Start Key: " Grid.Column="0" Grid.Row="0" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" />
+            <TextBox Name="StartKey" Text="F1" Grid.Column="1" Grid.Row="0" FontSize="12" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" MouseDoubleClick="StartKey_GotFocus" GotKeyboardFocus="StartKey_GotFocus" GotFocus="StartKey_GotFocus" LostFocus="StartKey_LostFocus" KeyUp="SetStartKey"/>
+            
+            <TextBlock Text="Stop Key: " Grid.Column="0" Grid.Row="1" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" />
+            <TextBox Name="StopKey" Text="F2" Grid.Column="1" Grid.Row="1" FontSize="12" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" MouseDoubleClick="StopKey_GotFocus" GotKeyboardFocus="StopKey_GotFocus" GotFocus="StopKey_GotFocus" LostFocus="StopKey_LostFocus" KeyUp="SetStopKey"/>
+
+            <TextBlock Text="Timer (Milliseconds): " Grid.Column="0" Grid.Row="2" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" />
+            <TextBox Name="Timer" Text="0" Grid.Column="1" Grid.Row="2" FontSize="12" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" MouseDoubleClick="Timer_GotFocus" GotKeyboardFocus="Timer_GotFocus" GotFocus="Timer_GotFocus" LostFocus="Timer_LostFocus" KeyUp="Timer_KeyUp" />
+
+            <TextBlock Text="Use specified coordinates: " Grid.Column="0" Grid.Row="3"  FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" />
+            <CheckBox Name="CoordinateCheckBox" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Checked="CoordinateCheckBoxToggle" Unchecked="CoordinateCheckBoxToggle" />
+
+            <TextBlock Text="X Coordinate: " Grid.Column="0" Grid.Row="4" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" />
+            <TextBox Name="XCoordinate" Text="0" Grid.Column="1" Grid.Row="4" FontSize="12" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" MouseDoubleClick="XCoordinate_GotFocus" GotKeyboardFocus="XCoordinate_GotFocus" GotFocus="XCoordinate_GotFocus" LostFocus="XCoordinate_LostFocus" KeyUp="XCoordinate_KeyUp" />
+
+            <TextBlock Text="Y Coordinate: " Grid.Column="0" Grid.Row="5" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" />
+            <TextBox Name="YCoordinate" Text="0" Grid.Column="1" Grid.Row="5" FontSize="12" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" MouseDoubleClick="YCoordinate_GotFocus" GotKeyboardFocus="YCoordinate_GotFocus" GotFocus="YCoordinate_GotFocus" LostFocus="YCoordinate_LostFocus" KeyUp="YCoordinate_KeyUp"/>
+        </Grid>
+    </Grid>
+</Window>
